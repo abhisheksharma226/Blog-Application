@@ -24,6 +24,10 @@ router.post("/signin" , async (req , res) => {
             error : "Incorrect Email or Password",
         });
     }
+});
+
+router.get("/logout" , (req , res ) =>{
+    res.clearCookie("token").redirect("/");
 })
 
 router.post("/signup" , async(req , res) => {
